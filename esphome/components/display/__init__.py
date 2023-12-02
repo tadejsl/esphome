@@ -96,7 +96,7 @@ async def setup_display_core_(var, config):
         pages = []
         for conf in config[CONF_PAGES]:
             lambda_ = await cg.process_lambda(
-                conf[CONF_LAMBDA], [(DisplayBufferRef, "it")], return_type=cg.void
+                conf[CONF_LAMBDA], [(DisplayBuffer, "it")], return_type=cg.void
             )
             page = cg.new_Pvariable(conf[CONF_ID], lambda_)
             pages.append(page)
